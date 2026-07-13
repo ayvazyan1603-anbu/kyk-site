@@ -1,9 +1,9 @@
 import { motion } from "motion/react";
-import { Award, Trophy, Medal, Tent, GraduationCap, Star } from "lucide-react";
+import { Award, Trophy, Medal, Tent, GraduationCap, Star, User, Users } from "lucide-react";
 import { federation } from "@/content";
 import { SectionReveal } from "@/components/layout/SectionReveal";
 
-const ICONS = [Award, Trophy, Medal, Tent, GraduationCap, Star];
+const ICONS = [Award, Trophy, Medal, Tent, GraduationCap, Star, User, Users];
 
 export function Federation() {
   return (
