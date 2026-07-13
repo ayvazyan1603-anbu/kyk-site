@@ -3,19 +3,19 @@
 
 export const site = {
   brand: {
-    short: "ԱՐԵՍ",
-    full: "ԱՐԵՍ Կիոկուշին Կարատեի Ակումբ",
-    en: "ARES Kyokushin Karate Club",
+    short: "Zeytun",
+    full: "Կիոկուշին Կարատեի Ակումբ",
+    en: "Kyokushin Karate Club",
     tagline: "Ուժ · Կարգապահություն · Հոգի",
   },
   contact: {
     phoneDisplay: "+374 55 123 456",
     phoneTel: "+37455123456",
     whatsapp: "37455123456", // international format, no +
-    telegramHandle: "ares_kyokushin",
-    instagramHandle: "ares.kyokushin",
-    email: "info@ares-kyokushin.am",
-    address: "Երևան, Զեյթուն վարչական շրջան, Ֆրունզեի 5",
+    telegramHandle: "",
+    instagramHandle: "",
+    email: "",
+    address: "Երևան, Զեյթուն վարչական շրջան",
     hours: "Երկ – Շաբ · 16:00 – 21:00",
     mapEmbed:
       "https://www.google.com/maps?q=Yerevan+Zeytun&output=embed",
@@ -193,7 +193,7 @@ export const faq = {
     },
     {
       q: "Ի՞նչ է պետք վերցնել առաջին դասին։",
-      a: "Հարմարավետ սպորտային հագուստ և ջրի շիշ։ Կիմոնոն (դոգի) կարիք չկա գնել առաջին օրերին։",
+      a: "Հարմարավետ սպորտային հագուստ և ջրի շիշ։ Կիմոնոն կարիք չկա գնել առաջին օրերին։",
     },
     {
       q: "Արդյոք վտանգավո՞ր է Կիոկուշինը երեխաների համար։",
@@ -202,10 +202,6 @@ export const faq = {
     {
       q: "Քանի՞ անգամ շաբաթում են մարզումները։",
       a: "Ստանդարտ գրաֆիկը 2–3 մարզում շաբաթում, յուրաքանչյուրը 60–75 րոպե։",
-    },
-    {
-      q: "Ծնողները կարո՞ղ են դիտել մարզումները։",
-      a: "Այո, ծնողների համար նախատեսված է սպասասրահ՝ մարզումը դիտելու հնարավորությամբ։",
     },
     {
       q: "Ինչպե՞ս են ընթանում գոտու քննությունները։",
