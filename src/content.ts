@@ -53,7 +53,7 @@ export const ctas = {
 
 export const hero = {
   eyebrow: "Կիոկուշին կարատեի ակումբ · Երևան",
-  title: "Կերտում ենք ուժեղ բնավորություններ",
+  title: "Կերտում ենք ուժեղ բնավորություն",
   subtitle:
     "5–14 տարեկան երեխաների համար նախատեսված պրոֆեսիոնալ Կիոկուշին դպրոց։ Կարգապահություն, հարգանք և ինքնավստահություն՝ իսկական մարտարվեստի միջոցով։",
   scroll: "Ոլորել",
@@ -311,7 +311,7 @@ export const footer = {
   copyright: `© ${new Date().getFullYear()} ${site.brand.en}. Բոլոր իրավունքները պաշտպանված են։`,
 };
 
-export const seo = {
+export const meta = {
   home: {
     title: "Dragon Dojo · Կիոկուշին Կարատեի Ակումբ Երևանում",
     description:
