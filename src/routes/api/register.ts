@@ -36,7 +36,7 @@ export const Route = createFileRoute("/api/register")({
         const v = parsed.data;
 
         const text =
-          `🥋 <b>Նոր հայտ · ԱՐԵՍ Կիոկուշին</b>\n\n` +
+          `🥋 <b>Նոր հայտ · Dragon Dojo Կիոկուշին</b>\n\n` +
           `👤 Ծնող: <b>${escapeHtml(v.parentName)}</b>\n` +
           `🧒 Երեխա: <b>${escapeHtml(v.childName)}</b>\n` +
           `🎂 Տարիք: <b>${v.childAge}</b>\n` +

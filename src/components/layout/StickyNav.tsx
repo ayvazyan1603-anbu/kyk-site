@@ -33,19 +33,19 @@ export function StickyNav() {
       <div
         className={cn(
           "mx-auto flex max-w-7xl items-center justify-between rounded-2xl px-4 sm:px-6 transition-all duration-300",
-          scrolled ? "glass py-2 shadow-[0_10px_40px_-20px_rgba(15,61,145,0.35)]" : "bg-transparent py-3",
+          scrolled ? "glass py-2 shadow-[0_10px_40px_-20px_rgba(15,61,145,0.35)]" : "bg-white py-3 shadow-sm",
         )}
       >
-        <Link to="/" className="flex items-center gap-3 group" aria-label="ԱՐԵՍ">
+        <Link to="/" className="flex items-center gap-3 group" aria-label="Dragon Dojo">
           <img
             src={IMAGES.logo}
-            alt="ԱՐԵՍ"
+            alt="Dragon Dojo"
             width={44}
             height={44}
             className="h-10 w-10 object-contain transition-transform group-hover:scale-105"
           />
           <span className="hidden sm:block font-display text-lg font-semibold tracking-tight text-foreground">
-            ԱՐԵՍ
+            Dragon Dojo
           </span>
         </Link>
 

@@ -51,7 +51,7 @@ export function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           src={IMAGES.logo}
-          alt="ԱՐԵՍ"
+          alt="Dragon Dojo"
           width={160}
           height={160}
           className="h-28 w-28 sm:h-36 sm:w-36 object-contain drop-shadow-[0_10px_40px_rgba(0,0,0,0.6)] [filter:brightness(0)_invert(1)]"

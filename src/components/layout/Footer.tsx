@@ -16,13 +16,11 @@ export function Footer() {
     <footer className="mt-24 border-t border-border bg-ink text-white">
       <div className="mx-auto max-w-7xl px-6 py-16 grid gap-12 md:grid-cols-4">
         <div className="md:col-span-2">
-          <div className="flex items-center gap-3">
-            <img src={IMAGES.logo} alt="ԱՐԵՍ" width={56} height={56} className="h-14 w-14 object-contain" />
-            <div>
-              <div className="font-display text-2xl font-semibold">{site.brand.short}</div>
-              <div className="text-white/60 text-sm">{site.brand.tagline}</div>
-            </div>
-          </div>
+          <Link to="/" className="flex items-center gap-3 group" aria-label="Dragon Dojo">
+            <img src={IMAGES.logo} alt="Dragon Dojo" width={56} height={56} className="h-14 w-14 object-contain" />
+            <span className="font-display text-2xl font-bold tracking-tight">Dragon Dojo</span>
+          </Link>
+          <div className="text-white/60 text-sm ml-[68px]">{site.brand.tagline}</div>
           <p className="mt-6 max-w-md text-white/70 leading-relaxed">
             {site.brand.full} — Երևանում գործող պրոֆեսիոնալ Կիոկուշին կարատեի դպրոց
             5–14 տարեկան երեխաների համար։
