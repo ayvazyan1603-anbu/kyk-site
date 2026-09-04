@@ -19,9 +19,9 @@ export function ScrollToTop() {
           exit={{ opacity: 0, scale: 0.6 }}
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           aria-label="Ոլորել վերև"
-          className="fixed bottom-6 right-6 z-40 grid h-12 w-12 place-items-center rounded-full bg-primary text-primary-foreground shadow-lg shadow-primary/40 hover:scale-110 transition-transform"
+          className="fixed bottom-[144px] sm:bottom-[160px] right-6 z-50 grid h-12 w-12 sm:h-14 sm:w-14 place-items-center rounded-full bg-primary text-primary-foreground shadow-lg shadow-primary/40 hover:scale-110 active:scale-95 transition-all duration-300"
         >
-          <ArrowUp className="h-5 w-5" />
+          <ArrowUp className="h-5 w-5 sm:h-6 sm:w-6" />
         </motion.button>
       )}
     </AnimatePresence>
