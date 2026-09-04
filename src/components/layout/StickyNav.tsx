@@ -33,7 +33,9 @@ export function StickyNav() {
       <div
         className={cn(
           "mx-auto flex max-w-7xl items-center justify-between rounded-2xl px-4 sm:px-6 transition-all duration-300",
-          scrolled ? "glass py-2 shadow-[0_10px_40px_-20px_rgba(15,61,145,0.35)]" : "bg-white py-3 shadow-sm",
+          scrolled
+            ? "glass py-2 shadow-[0_10px_40px_-20px_rgba(15,61,145,0.35)]"
+            : "bg-transparent md:bg-white py-3 shadow-none md:shadow-sm",
         )}
       >
         <Link to="/" className="flex items-center gap-3 group" aria-label="Dragon Dojo">
@@ -73,7 +75,12 @@ export function StickyNav() {
         </div>
 
         <button
-          className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-full text-foreground"
+          className={cn(
+            "md:hidden inline-flex h-10 w-10 items-center justify-center rounded-full transition-all",
+            scrolled
+              ? "text-foreground hover:bg-black/5"
+              : "text-white bg-black/35 backdrop-blur-md hover:bg-black/50"
+          )}
           onClick={() => setOpen((s) => !s)}
           aria-label="Menu"
         >

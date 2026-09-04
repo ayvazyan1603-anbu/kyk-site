@@ -14,6 +14,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { StickyNav } from "../components/layout/StickyNav";
 import { Footer } from "../components/layout/Footer";
 import { ScrollToTop } from "../components/layout/ScrollToTop";
+import { FloatingContacts } from "../components/layout/FloatingContacts";
 import { site } from "../content";
 
 function NotFoundComponent() {
@@ -158,6 +159,7 @@ function RootComponent() {
       </main>
       <Footer />
       <ScrollToTop />
+      <FloatingContacts />
     </QueryClientProvider>
   );
 }

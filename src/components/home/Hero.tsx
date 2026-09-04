@@ -110,7 +110,6 @@ export function Hero() {
         className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-white/60"
       >
         <div className="flex flex-col items-center gap-2">
-          <span className="text-[10px] uppercase tracking-[0.4em]">{hero.scroll}</span>
           <ChevronDown className="h-5 w-5 animate-bounce" />
         </div>
       </motion.div>

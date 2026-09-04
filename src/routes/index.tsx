@@ -5,7 +5,6 @@ import { WhyKyokushin } from "@/components/home/WhyKyokushin";
 import { AboutTrainings } from "@/components/home/AboutTrainings";
 import { FirstLessonSteps } from "@/components/home/FirstLessonSteps";
 import { Federation } from "@/components/home/Federation";
-import { Countdown } from "@/components/home/Countdown";
 import { GalleryPreview } from "@/components/home/GalleryPreview";
 import { Stats } from "@/components/home/Stats";
 import { Reviews } from "@/components/home/Reviews";
@@ -36,7 +35,6 @@ function Index() {
       <FirstLessonSteps />
       <Federation />
       <CtaBanner />
-      <Countdown />
       <GalleryPreview />
       <Stats />
       <Reviews />
