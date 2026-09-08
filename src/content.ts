@@ -9,10 +9,10 @@ export const site = {
     tagline: "Ուժ · Կարգապահություն · Հոգի",
   },
   contact: {
-    phoneDisplay: "+374 55 123 456",
-    phoneTel: "+37455123456",
-    whatsapp: "37455123456", // international format, no +
-    telegramHandle: "",
+    phoneDisplay: "+374 33 333 039",
+    phoneTel: "+37433333039",
+    whatsapp: "37433333039", // international format, no +
+    telegramHandle: "@RafayellVardanyan",
     instagramHandle: "https://www.instagram.com/kyokushiin_club/",
     email: "",
     address: "Երևան, Զեյթուն վարչական շրջան, Դրոյի 11",
