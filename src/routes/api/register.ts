@@ -14,9 +14,13 @@ export const Route = createFileRoute("/api/register")({
     handlers: {
       POST: async ({ request }) => {
         const BOT_TOKEN = process.env.BOT_TOKEN;
-        const CHAT_ID = process.env.CHAT_ID;
+        const chatIdsRaw = process.env.CHAT_IDS || process.env.CHAT_ID || "";
+        const chatIds = chatIdsRaw
+          .split(/[,\s;]+/)
+          .map((id) => id.trim())
+          .filter(Boolean);
 
-        if (!BOT_TOKEN || !CHAT_ID) {
+        if (!BOT_TOKEN || chatIds.length === 0) {
           console.error("Missing env: BOT_TOKEN / CHAT_ID");
           return new Response("Server not configured", { status: 500 });
         }
@@ -42,32 +46,38 @@ export const Route = createFileRoute("/api/register")({
           `📞 Հեռախոս: <b>${escapeHtml(v.phone)}</b>` +
           (v.message ? `\n\n💬 ${escapeHtml(v.message)}` : "");
 
-        const tgRes = await fetch(
-          `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`,
-          {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              chat_id: CHAT_ID,
-              text,
-              parse_mode: "HTML",
-              disable_web_page_preview: true,
+        const results = await Promise.allSettled(
+          chatIds.map((chatId) =>
+            fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                chat_id: chatId,
+                text,
+                parse_mode: "HTML",
+                disable_web_page_preview: true,
+              }),
+            }).then(async (res) => {
+              if (!res.ok) {
+                const err = await res.text().catch(() => "");
+                throw new Error(`Failed [${res.status}] for ${chatId}: ${err}`);
+              }
+              const json = (await res.json().catch(() => ({}))) as { ok?: boolean; description?: string };
+              if (json.ok === false) {
+                throw new Error(`Telegram error for ${chatId}: ${json.description ?? "unknown"}`);
+              }
+              return json;
             }),
-          },
+          ),
         );
 
-        if (!tgRes.ok) {
-          const errBody = await tgRes.text().catch(() => "");
-          console.error(`Telegram send failed [${tgRes.status}]:`, errBody);
-          return new Response(`Telegram send failed [${tgRes.status}]: ${errBody}`, { status: 502 });
-        }
-        const tgJson = (await tgRes.json().catch(() => ({}))) as { ok?: boolean; description?: string };
-        if (tgJson.ok === false) {
-          console.error("Telegram API returned ok:false", tgJson);
-          return new Response(`Telegram: ${tgJson.description ?? "error"}`, { status: 502 });
+        const succeeded = results.filter((r) => r.status === "fulfilled");
+        if (succeeded.length === 0) {
+          console.error("All telegram sends failed", results);
+          return new Response("Failed to send telegram messages", { status: 502 });
         }
 
-        return Response.json({ ok: true });
+        return Response.json({ ok: true, sent: succeeded.length });
       },
     },
   },
