@@ -12,7 +12,7 @@ export const site = {
     phoneDisplay: "+374 33 333 039",
     phoneTel: "+37433333039",
     whatsapp: "37433333039", // international format, no +
-    telegramHandle: "@RafayellVardanyan",
+    telegramHandle: "RafayellVardanyan",
     instagramHandle: "https://www.instagram.com/kyokushiin_club/",
     email: "",
     address: "Երևան, Զեյթուն վարչական շրջան, Դրոյի 11",

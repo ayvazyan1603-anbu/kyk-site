@@ -13,12 +13,11 @@ export const Route = createFileRoute("/api/register")({
   server: {
     handlers: {
       POST: async ({ request }) => {
-        const LOVABLE_API_KEY = process.env.LOVABLE_API_KEY;
-        const TELEGRAM_API_KEY = process.env.TELEGRAM_API_KEY;
-        const CHAT_ID = process.env.TELEGRAM_CHAT_ID;
+        const BOT_TOKEN = process.env.BOT_TOKEN;
+        const CHAT_ID = process.env.CHAT_ID;
 
-        if (!LOVABLE_API_KEY || !TELEGRAM_API_KEY || !CHAT_ID) {
-          console.error("Missing env: LOVABLE_API_KEY / TELEGRAM_API_KEY / TELEGRAM_CHAT_ID");
+        if (!BOT_TOKEN || !CHAT_ID) {
+          console.error("Missing env: BOT_TOKEN / CHAT_ID");
           return new Response("Server not configured", { status: 500 });
         }
 
@@ -36,7 +35,7 @@ export const Route = createFileRoute("/api/register")({
         const v = parsed.data;
 
         const text =
-          `🥋 <b>Նոր հայտ · Dragon Dojo Կիոկուշին</b>\n\n` +
+          `🥋 <b>Նոր հայտ · Dragon Dojo</b>\n\n` +
           `👤 Ծնող: <b>${escapeHtml(v.parentName)}</b>\n` +
           `🧒 Երեխա: <b>${escapeHtml(v.childName)}</b>\n` +
           `🎂 Տարիք: <b>${v.childAge}</b>\n` +
@@ -44,14 +43,10 @@ export const Route = createFileRoute("/api/register")({
           (v.message ? `\n\n💬 ${escapeHtml(v.message)}` : "");
 
         const tgRes = await fetch(
-          "https://connector-gateway.lovable.dev/telegram/sendMessage",
+          `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`,
           {
             method: "POST",
-            headers: {
-              Authorization: `Bearer ${LOVABLE_API_KEY}`,
-              "X-Connection-Api-Key": TELEGRAM_API_KEY,
-              "Content-Type": "application/json",
-            },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
               chat_id: CHAT_ID,
               text,
