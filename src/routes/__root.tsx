@@ -85,7 +85,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Պրոֆեսիոնալ Կիոկուշին կարատեի դպրոց 5–14 տարեկան երեխաների համար։ Առաջին մարզումն անվճար է։",
+          "Պրոֆեսիոնալ Կիոկուշին կարատեի դպրոց 5–14 տարեկան երեխաների համար։ Մեկ ամիս անվճար պարապմունք։",
       },
       { name: "author", content: site.brand.en },
       { property: "og:site_name", content: site.brand.en },
